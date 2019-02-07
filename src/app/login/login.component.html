@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row formstyle">
+<div class="col-lg-4 col-sm-12"></div>
+  <div class="col-lg-4 col-sm-12 fg">
+      <br>
+      <h1 class="login">Login</h1> 
+   <br>
+<form  [formGroup]="form">    
+   <div class="form-group">
+    <input type="text" class="form-control" id="loginemail" formControlName="email" placeholder="Enter Email">
+    <div *ngIf="form.get('email').touched && form.get('email').invalid">
+      <div *ngIf="form.get('email').errors.required" class="alert alert-danger">Email is mandatory</div>
+      <div *ngIf="form.get('email').errors.pattern" class="alert alert-danger">Email is not valid example: @gmail.com</div>
+      <div *ngIf="form.get('email').errors.maxLength" class="alert alert-danger">Email is of max 255 charecters</div>
+    </div>  
+   </div >
+   <div class="form-group">
+      <input type="password" class="form-control" id="loginpassword" formControlName="password" placeholder="Password">
+      <div *ngIf="form.get('password').touched && form.get('password').invalid">
+        <div *ngIf="form.get('password').errors.required" class="alert alert-danger">Password is mandatory</div>
+        <div *ngIf="form.get('password').errors.minlength" class="alert alert-danger">Password is of min 6 charecters</div>
+      <div *ngIf="form.get('password').errors.maxlength" class="alert alert-danger">Password is of max 50 charecters</div>  
+      </div>
+    </div>
+  <button type="submit" class="btn btn-primary"  (click)="login();" >Login</button>
+  <br>
+  <div> Dont Have an account ?<a class="account1" [routerLink]="['/signup']"> Signup </a></div>
+</form>
+<br>
+</div>
+<div class="col-lg-4 col-sm-12"></div>
+</div>
+</div>

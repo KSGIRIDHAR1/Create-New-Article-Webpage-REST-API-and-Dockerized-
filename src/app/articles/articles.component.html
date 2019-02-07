@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row space">
+    <div class="col-lg-9"><input class="form-control mr-sm-2" type="search" [(ngModel)]="keyword" placeholder="Search Keyword" aria-label="Search"></div>
+    <div class="col-lg-3"><button class="btn btn-primary" (click)="search();" type="submit">Search Article</button></div>
+  </div>
+
+  <div class="card text-center" *ngFor="let article of value">
+    <h3> Searched Article(s)</h3>
+    <div class="card-header">
+      {{article.title}}
+
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-4 sm-12">
+          <img src="{{article.urlToImage}}" class="img">
+        </div>
+        <div class="col-lg-8 sm-12">
+
+          <h6 class="card-text">{{article.description}}</h6>
+          <p class="card-text">{{article.content}}</p>
+        </div>
+
+
+      </div>
+
+    </div>
+    <div class="card-footer text-muted">
+      <p class="card-title">{{article.publishedAt}}</p>
+    </div>
+  </div>
+
+  <div class="row space">
+      <div class="col-lg-1 "></div>
+      <div class="col-lg-12 col-sm-12">
+        <h1>News Updates</h1>
+      <br>
+        <div class="card text-center" *ngFor="let article of articleList">
+          
+          <div class="card-header">
+            <h3>{{article.title}}</h3>
+            <span class="icon">
+              <button class="btn btn-primary" (click)="saveArticle(article)">Add Favourite</button>
+            </span>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-4 sm-12">
+                <img src="{{article.urlToImage}}" style="width:75%;height:100%">
+              </div>
+              <div class="col-lg-8 sm-12">
+                
+                <h5>Description</h5><p class="card-text">{{article.description}}</p>
+                <h5>Content</h5><p class="card-text">{{article.content}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-muted">
+            <p class="card-title">Author-{{article.author}} </p>Publisher-{{article.publishedAt}}
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>

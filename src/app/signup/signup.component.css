@@ -1,0 +1,20 @@
+.fg
+{
+    background: #ccc;
+    border-radius: 10px;
+}
+
+.formstyle{
+    padding-top:120px;
+}
+
+.sign
+{
+    text-align: center;
+}
+
+.account{
+    color: blue;
+    font-size: 15px;
+    text-decoration: none;
+}

@@ -1,0 +1,21 @@
+.fg
+{
+    background: #ccc;
+    border-radius: 10px;
+}
+
+.formstyle{
+    padding-top:120px;
+}
+
+.login
+{
+    text-align: center;
+}
+
+.account1{
+    color: blue;
+    font-size: 15px;
+    text-decoration: none;
+}
+

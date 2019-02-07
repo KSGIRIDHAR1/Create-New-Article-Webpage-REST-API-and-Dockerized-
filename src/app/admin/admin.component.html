@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-sm-12 ">
+      <h2> Search News Analyst</h2>
+
+      
+      
+    </div>
+    </div>
+    <div class="row">
+    <div class ="col-lg-10"><input type="text" class="form-control" placeholder="Search" #email/><br></div>
+      <div class ="col-lg-2"><button class="btn btn-primary bt" type="button" (click)="getUser(email.value)"> Search </button></div>
+    </div>
+
+  <br>
+
+ <div class="row">
+  <div class="col-lg-4 col-sm-12 " *ngIf="analyst1.status">
+
+      <h5> Name : {{analyst1.name}} </h5>
+      <h5> Email : {{analyst1.email}} </h5>
+      <h5> Language : {{analyst1.language.name}}</h5>
+      <button class="btn btn-danger" (click)="changeStatus(analyst1.email)"> Blacklisted </button>
+    
+  </div>
+
+  <div class="col-lg-4 col-sm-12 " *ngIf="!analyst1.status">
+
+    
+      <h5> Name : {{analyst1.name}} </h5>
+      <h5> Email : {{analyst1.email}} </h5>
+      <h5> Language : {{analyst1.language.name}}</h5>
+      <button class="btn btn-success" (click)="changeStatus(analyst1.email)"> Blacklist  </button>
+  
+  </div>
+</div>
+
+</div>

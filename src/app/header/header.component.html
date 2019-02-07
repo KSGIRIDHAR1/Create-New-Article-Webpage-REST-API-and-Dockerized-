@@ -1,0 +1,22 @@
+<nav class="navbar navbar-default bg-dark">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" [routerLink]="['/articles']">News 360</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <div *ngIf="!service.loggedIn">
+        <li class="nav-item">
+          <a class="nav-link " [routerLink]="['/login']" class="a1">Login </a> &nbsp;
+          <a class="nav-link " [routerLink]="['/signup']" class="a1">Signup </a> &nbsp;
+        </li>
+      </div>
+      <div *ngIf="service.loggedIn">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/articles']" class="a1">View Article </a> &nbsp;
+          <a class="nav-link" [routerLink]="['/favourite']" class="a1"> View Favourite Articles </a> &nbsp;
+          <a class="nav-link" [routerLink]="['/login']" class="a1"> Logout </a> 
+          </li>
+      </div>
+    </ul>
+  </div>
+</nav>
